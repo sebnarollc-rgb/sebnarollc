@@ -733,15 +733,22 @@
         .catch(function(){ return {ok:false}; });
     }
 
+    /* Only include the fields that apply to the service they picked. */
+    function buildNotes(d){
+      var v=d.get('service')||'', parts=['Service: '+v, 'Phone: '+(d.get('phone')||'')];
+      if(d.get('business')) parts.push('Business: '+d.get('business'));
+      if(v==='Website' || v==='Both')
+        parts.push('Website: '+(d.get('website') || (document.getElementById('nowebsite').checked?'none yet':'not given')));
+      if(v==='Instagram marketing' || v==='Both')
+        parts.push('Instagram: '+(d.get('instagram') || (document.getElementById('noig').checked?'none yet':'not given')));
+      return parts.join(' | ');
+    }
+
     function showCalendar(){
       var d=new FormData(cf),
           q='?name='+encodeURIComponent(d.get('name')||'')+
             '&email='+encodeURIComponent(d.get('email')||'')+
-            '&notes='+encodeURIComponent('Service: '+(d.get('service')||'')+
-              ' | Phone: '+(d.get('phone')||'')+
-              ' | Business: '+(d.get('business')||'')+
-              ' | Website: '+(d.get('website')|| (document.getElementById('nowebsite').checked?'none yet':''))+
-              ' | Instagram: '+(d.get('instagram')|| (document.getElementById('noig').checked?'none yet':'')));
+            '&notes='+encodeURIComponent(buildNotes(d));
       var base = CAL[d.get('service')] || CAL['Website'];
       calframe.src=base+q; callink.href=base+q;
       calwrap.hidden=false;
