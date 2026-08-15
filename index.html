@@ -671,12 +671,15 @@
 
   /* contact form — not wired to a backend yet */
   /* ================= LEAD CAPTURE =================
-     TWO THINGS TO FILL IN BEFORE LAUNCH:
-       1. W3_KEY  — free access key from https://web3forms.com (enter your email, they send the key)
-       2. CAL_URL — your Cal.com booking link, e.g. https://cal.com/sebnaro/intro-call
-     Until both are set, the form runs in demo mode and warns instead of sending. */
+     W3_KEY — Web3Forms access key; decides which inbox leads land in.
+     CAL    — one Cal.com event per service. The service they pick decides
+              which calendar they land on, so the call is pre-qualified. */
   var W3_KEY  = '6ce08e72-a4e0-4cda-b74a-5d4948c58c28';
-  var CAL_URL = 'PASTE_YOUR_CAL_COM_LINK_HERE';
+  var CAL = {
+    'Website':              'https://cal.com/sebnaro/website-plan-price',
+    'Instagram marketing':  'https://cal.com/sebnaro/instagram-plan-price',
+    'Both':                 'https://cal.com/sebnaro/website-instagram-plan-price'
+  };
 
   var cf=document.getElementById('cform');
   if(cf){
@@ -739,14 +742,8 @@
               ' | Business: '+(d.get('business')||'')+
               ' | Website: '+(d.get('website')|| (document.getElementById('nowebsite').checked?'none yet':''))+
               ' | Instagram: '+(d.get('instagram')|| (document.getElementById('noig').checked?'none yet':'')));
-      if(CAL_URL.indexOf('PASTE_')===0){
-        sentbox.hidden=false;
-        sentTitle.textContent='Calendar not connected yet';
-        sentBody.textContent='Add your Cal.com link in the code (CAL_URL) and the booking calendar will appear here, pre-filled with these answers.';
-        sentbox.scrollIntoView({behavior:'smooth',block:'center'});
-        return;
-      }
-      calframe.src=CAL_URL+q; callink.href=CAL_URL+q;
+      var base = CAL[d.get('service')] || CAL['Website'];
+      calframe.src=base+q; callink.href=base+q;
       calwrap.hidden=false;
       calwrap.scrollIntoView({behavior:'smooth',block:'start'});
     }
