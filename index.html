@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sebnaro — Websites &amp; Instagram Marketing for Small Business</title>
+<meta name="description" content="Sebnaro builds custom websites and runs Instagram marketing for small and medium business. Two services, sold separately. Fixed-price website packages from $899.">
+<meta property="og:title" content="Sebnaro — Websites &amp; Instagram Marketing">
+<meta property="og:description" content="Custom websites and Instagram marketing for small and medium business. Two founders, two services, no account managers.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F6F4EE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F4EE;
+    --ink:#0D0D0B;
+    --dim:rgba(13,13,11,.6);
+    --hair:rgba(13,13,11,.18);
+    --press:#0026FF;
+    --display:'Anton',Impact,'Arial Narrow',sans-serif;
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --sans:'Archivo',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);overflow-x:hidden;
+    -webkit-font-smoothing:antialiased}
+  ::selection{background:var(--press);color:#fff}
+  .wrap{max-width:1440px;margin:0 auto;padding:0 clamp(14px,2.4vw,34px)}
+  .rule{height:1px;background:var(--ink)}
+  .rule.thick{height:4px}
+  .rule.hair{background:var(--hair)}
+
+  /* ---------- dateline ---------- */
+  .dateline{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:9px 0;
+    font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);flex-wrap:wrap}
+  .dateline b{color:var(--press);font-weight:600}
+
+  /* ---------- masthead ---------- */
+  .masthead{font-family:var(--display);font-size:clamp(58px,15.4vw,250px);line-height:.78;letter-spacing:-.02em;
+    text-align:center;padding:clamp(10px,1.6vw,22px) 0 clamp(6px,1vw,14px);position:relative;overflow:hidden}
+  .masthead span{display:inline-block;transform:translateY(110%);animation:drop .9s cubic-bezier(.16,1,.3,1) forwards}
+  @keyframes drop{to{transform:translateY(0)}}
+
+  .subhead{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:22px;padding:14px 0}
+  .subhead .hr{height:1px;background:var(--hair)}
+  .subhead .mid{font-family:var(--serif);font-style:italic;font-size:clamp(13px,1.15vw,17px);
+    color:var(--dim);white-space:nowrap}
+
+  /* ---------- ticker ---------- */
+  .ticker{background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;padding:7px 0;
+    font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+  .ticker div{display:inline-block;animation:tick 44s linear infinite}
+  .ticker span{padding:0 30px}
+  .ticker i{color:#5C7BFF;font-style:normal}
+  @keyframes tick{to{transform:translateX(-50%)}}
+
+  /* ---------- cover (first screen only) ---------- */
+  #cover{min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
+  .leadwrap{flex:1;display:flex;flex-direction:column;min-height:0}
+  .coverfoot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+    border-top:1px solid var(--hair);padding:14px 0 20px;font-size:10px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--dim)}
+  .coverfoot a{color:var(--dim);text-decoration:none;display:flex;align-items:center;gap:9px;transition:color .25s}
+  .coverfoot a:hover{color:var(--press)}
+  .coverfoot a i{font-style:normal;display:inline-block;animation:nudge 2.4s ease-in-out infinite}
+  @keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+  /* ---------- lead spread ---------- */
+  .lead{flex:1;display:grid;grid-template-columns:1.85fr 1fr;gap:clamp(30px,5vw,80px);
+    padding:clamp(34px,4.5vw,72px) 0;align-items:start;align-content:center}
+  .lead h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,4.5vw,70px);line-height:1.02;
+    letter-spacing:-.03em;max-width:19ch}
+  .lead h1 em{font-style:italic;color:var(--press)}
+  .lead .standfirst{font-family:var(--serif);font-size:clamp(15px,1.3vw,20px);line-height:1.55;color:var(--dim);
+    margin-top:26px;max-width:56ch}
+  .lead .glance{border-top:5px solid var(--ink);padding-top:14px}
+  .glance .gh{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);margin-bottom:14px}
+  .glance .s{padding:13px 0;border-top:1px solid rgba(13,13,11,.12)}
+  .glance .s:first-of-type{border-top:0;padding-top:0}
+  .glance .s b{display:block;font-family:var(--display);font-size:clamp(17px,1.65vw,25px);line-height:1.06;
+    text-transform:uppercase;letter-spacing:-.01em;font-weight:400}
+  .glance .s span{display:block;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--dim);margin-top:6px}
+  .col p{font-size:13.5px;line-height:1.62;margin-bottom:12px;color:var(--ink)}
+  .col p.drop::first-letter{font-family:var(--display);font-size:52px;line-height:.8;float:left;
+    margin:5px 9px 0 0;color:var(--press)}
+  .col h4{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);
+    padding-bottom:8px;margin-bottom:12px;border-bottom:1px solid var(--ink)}
+  .col .fact{border-top:1px solid var(--hair);padding:10px 0;display:flex;justify-content:space-between;
+    font-size:12px;gap:12px}
+  .col .fact b{font-weight:600}
+
+  /* ---------- kinetic band ---------- */
+  .kinetic{padding:clamp(26px,3.6vw,52px) 0;border-top:4px solid var(--ink);
+    border-bottom:1px solid var(--ink);position:relative}
+  .kinetic::before,.kinetic::after{content:'';position:absolute;top:0;bottom:0;width:clamp(30px,6vw,110px);
+    z-index:3;pointer-events:none}
+  .kinetic::before{left:0;background:linear-gradient(90deg,var(--paper),rgba(246,244,238,0))}
+  .kinetic::after{right:0;background:linear-gradient(270deg,var(--paper),rgba(246,244,238,0))}
+  .mrow{overflow:hidden;white-space:nowrap;padding:2px 0}
+  .mtrack{display:inline-block;white-space:nowrap;will-change:transform;
+    font-family:var(--display);font-size:clamp(30px,5.4vw,88px);line-height:1.06;letter-spacing:-.015em}
+  .mtrack .u{padding-right:.5em}
+  .mtrack .dot{color:var(--press);padding:0 .28em}
+  .mrow.a .mtrack{animation:marqL 30s linear infinite}
+  .mrow.b .mtrack{animation:marqR 38s linear infinite;color:transparent;-webkit-text-stroke:1.3px var(--ink)}
+  .mrow.b .mtrack .dot{-webkit-text-stroke:1.3px var(--press)}
+  .mrow.c .mtrack{animation:marqL 24s linear infinite}
+  .mrow.c .mtrack .hi{color:var(--press)}
+  @keyframes marqL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes marqR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+  .kinetic:hover .mtrack{animation-play-state:paused}
+  .kcap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:10px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--dim);padding-top:16px;margin-top:14px;border-top:1px solid var(--hair)}
+  @media (prefers-reduced-motion:reduce){.mtrack{animation:none!important}.ticker div{animation:none}}
+
+  /* ---------- why (problem / answer) ---------- */
+  .why{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);
+    padding:clamp(44px,6vw,92px) 0;border-bottom:1px solid var(--ink)}
+  .why h3{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);
+    border-bottom:1px solid var(--ink);padding-bottom:9px;margin-bottom:16px}
+
+  /* ---------- services ---------- */
+  .svc{padding:clamp(38px,5vw,72px) 0;border-bottom:1px solid var(--ink)}
+  .svc-top{display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  .svc-top .no{font-family:var(--display);font-size:clamp(60px,10vw,170px);line-height:.78;letter-spacing:-.03em;
+    color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+  .svc-top h2{font-family:var(--display);font-size:clamp(34px,5.6vw,92px);line-height:.88;letter-spacing:-.02em;
+    text-transform:uppercase}
+  .svc-top .meta{margin-left:auto;text-align:right;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--dim);line-height:2}
+  .svc-top .meta b{color:var(--press)}
+  .svc-body{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:26px;border-top:1px solid var(--ink);
+    padding-top:20px}
+  .svc-body > div{padding:0 22px;border-right:1px solid var(--hair)}
+  .svc-body > div:first-child{padding-left:0} .svc-body > div:last-child{border-right:0;padding-right:0}
+  .svc-body ul{list-style:none}
+  .svc-body li{font-size:13.5px;line-height:1.45;padding:9px 0;border-bottom:1px dotted var(--hair)}
+  .svc-body li:last-child{border-bottom:0}
+  .pull{font-family:var(--serif);font-style:italic;font-size:clamp(17px,1.7vw,25px);line-height:1.34;
+    border-left:3px solid var(--press);padding-left:16px;margin-top:26px;max-width:60ch}
+
+  /* ---------- inverted process ---------- */
+  .invert{background:var(--ink);color:var(--paper);padding:clamp(46px,6vw,92px) 0;margin-top:0}
+  .invert .wrap{max-width:1440px}
+  .invert h3{font-family:var(--display);font-size:clamp(30px,5.2vw,84px);line-height:1.12;text-transform:uppercase;
+    letter-spacing:-.02em}
+  .invert h3 em{font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none;color:var(--press);
+    letter-spacing:-.02em}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);margin-top:40px;border-top:1px solid rgba(246,244,238,.3)}
+  .steps > div{padding:24px 22px 30px 0;border-right:1px solid rgba(246,244,238,.2);position:relative}
+  .steps > div:not(:first-child){padding-left:22px}
+  .steps > div:last-child{border-right:0}
+  .steps .n{font-family:var(--display);font-size:clamp(42px,4.6vw,74px);line-height:.85;color:transparent;
+    -webkit-text-stroke:1.2px rgba(246,244,238,.5)}
+  .steps h4{font-size:19px;font-weight:600;letter-spacing:-.02em;margin:16px 0 9px}
+  .steps p{font-size:13px;line-height:1.55;color:rgba(246,244,238,.6)}
+  .steps .when{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--press);margin-top:14px;display:block}
+
+  /* ---------- classifieds ---------- */
+  .classifieds{padding:clamp(38px,5vw,72px) 0}
+  .cl-head{display:flex;align-items:baseline;gap:16px;border-bottom:4px solid var(--ink);padding-bottom:10px}
+  .cl-head h3{font-family:var(--display);font-size:clamp(24px,3.4vw,54px);text-transform:uppercase;letter-spacing:-.01em}
+  .cl-head span{margin-left:auto;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+  .cl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair);
+    border-top:0;margin-top:0}
+  .ad{background:var(--paper);padding:20px 18px 26px;min-height:180px;position:relative;transition:.28s}
+  .ad:hover{background:var(--ink);color:var(--paper)}
+  .ad .k{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--press)}
+  .ad h4{font-family:var(--serif);font-weight:600;font-size:21px;line-height:1.12;letter-spacing:-.02em;margin:12px 0 8px}
+  .ad p{font-size:12.5px;line-height:1.5;color:var(--dim)}
+  .ad:hover p{color:rgba(246,244,238,.6)}
+  .ad .stamp{position:absolute;bottom:14px;left:18px;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--dim);border:1px solid var(--hair);padding:3px 7px}
+  .ad:hover .stamp{border-color:rgba(246,244,238,.35);color:rgba(246,244,238,.6)}
+
+  /* ---------- founders ---------- */
+  .bylines{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:4px solid var(--ink);
+    border-bottom:1px solid var(--ink);padding:34px 0}
+  .byline{padding-right:38px;border-right:1px solid var(--hair)}
+  .byline:last-child{border-right:0;padding-right:0;padding-left:38px}
+  .byline .r{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press)}
+  .byline h3{font-family:var(--display);font-size:clamp(34px,4.4vw,72px);line-height:.9;text-transform:uppercase;
+    letter-spacing:-.02em;margin:12px 0 12px}
+  .byline p{font-size:14px;line-height:1.62;color:var(--dim);max-width:40ch}
+
+  /* ---------- back page ---------- */
+  .back{padding:clamp(52px,7vw,110px) 0 40px;text-align:center}
+  .back .k{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim)}
+  .back h2{font-family:var(--display);font-size:clamp(40px,10.4vw,168px);line-height:1.08;text-transform:uppercase;
+    letter-spacing:-.025em;margin:16px 0 8px}
+  .back h2 em{font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none;color:var(--press)}
+  .back a.mail{display:inline-block;margin-top:26px;font-family:var(--serif);font-size:clamp(21px,3vw,44px);
+    color:var(--ink);text-decoration:none;border-bottom:2px solid var(--press);transition:.25s}
+  .back a.mail:hover{color:var(--press)}
+  .colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:16px 0 34px;
+    font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);border-top:1px solid var(--ink);margin-top:46px}
+
+  #badge{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:40;font-size:9.5px;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--dim);background:rgba(246,244,238,.86);
+    backdrop-filter:blur(6px);border:1px solid var(--hair);padding:6px 14px;border-radius:100px}
+
+  /* ---------- sticky nav ---------- */
+  #nav{position:fixed;top:0;left:0;right:0;z-index:45;background:var(--ink);color:var(--paper);
+    transform:translateY(-102%);transition:transform .45s cubic-bezier(.16,1,.3,1)}
+  #nav.on{transform:translateY(0)}
+  #nav .inner{max-width:1440px;margin:0 auto;padding:0 clamp(14px,2.4vw,34px);height:52px;
+    display:flex;align-items:center;gap:6px}
+  #nav .bm{font-family:var(--display);font-size:19px;letter-spacing:.01em;margin-right:22px;text-decoration:none;color:var(--paper)}
+  #nav a.l{color:rgba(246,244,238,.62);text-decoration:none;font-size:10px;letter-spacing:.18em;
+    text-transform:uppercase;padding:8px 11px;transition:.2s}
+  #nav a.l:hover{color:var(--paper)}
+  #nav a.l.on{color:var(--paper);box-shadow:inset 0 -2px 0 #5C7BFF}
+  #nav .cta{margin-left:auto;background:var(--paper);color:var(--ink);text-decoration:none;font-size:10px;
+    letter-spacing:.16em;text-transform:uppercase;padding:10px 16px;font-weight:600;transition:.2s}
+  #nav .cta:hover{background:var(--press);color:#fff}
+  #navtoggle{display:none}
+
+  /* ---------- pricing link band ---------- */
+  .pricelink{display:flex;align-items:center;gap:18px;margin-top:clamp(26px,3.4vw,44px);
+    border:1px solid var(--ink);border-left:5px solid var(--press);padding:20px 22px;text-decoration:none;
+    color:var(--ink);transition:.28s cubic-bezier(.2,.7,.3,1)}
+  .pricelink:hover{background:var(--ink);color:var(--paper);border-left-color:#5C7BFF}
+  .pricelink .pl-k{font-family:var(--display);font-size:clamp(18px,2vw,30px);text-transform:uppercase;
+    letter-spacing:-.01em;white-space:nowrap}
+  .pricelink .pl-t{font-size:14px;line-height:1.45;color:var(--dim)}
+  .pricelink:hover .pl-t{color:rgba(246,244,238,.72)}
+  .pricelink .pl-a{margin-left:auto;font-size:22px;transition:transform .28s}
+  .pricelink:hover .pl-a{transform:translateX(6px)}
+
+  /* ---------- contact form ---------- */
+  .backsub{font-size:15px;line-height:1.6;color:var(--dim);max-width:52ch;margin:22px auto 0}
+  .cform{max-width:760px;margin:38px auto 0;text-align:left}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+  .cform label{display:block}
+  .cform label span{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--dim);margin-bottom:7px}
+  .cform input,.cform select,.cform textarea{width:100%;background:transparent;border:0;
+    border-bottom:1px solid var(--ink);padding:10px 2px;font-family:var(--sans);font-size:15px;
+    color:var(--ink);border-radius:0;transition:.22s}
+  .cform textarea{resize:vertical}
+  .cform input:focus,.cform select:focus,.cform textarea:focus{outline:none;border-bottom-color:var(--press);
+    box-shadow:0 1px 0 var(--press)}
+  .cform input::placeholder,.cform textarea::placeholder{color:rgba(13,13,11,.3)}
+  .cform label.full{margin-bottom:22px}
+  .fsend{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .cform button[type="submit"]{background:var(--ink);color:var(--paper);border:0;padding:16px 30px;
+    font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.04em;cursor:pointer;transition:.25s}
+  .cform button[type="submit"]:hover{background:var(--press)}
+  .fnote{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+  .fnote.err{color:var(--press)}
+  .colophon a{color:var(--dim);text-decoration:none}
+  .colophon a:hover{color:var(--press)}
+
+  [hidden]{display:none!important}
+  /* ---------- lead capture ---------- */
+  .fstep{display:flex;align-items:center;gap:12px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--ink);border-bottom:2px solid var(--ink);padding-bottom:9px;margin:34px 0 20px}
+  .fstep:first-child{margin-top:0}
+  .fstep .sn{font-family:var(--display);font-size:20px;letter-spacing:0;color:var(--press)}
+  .cform .req{color:var(--press)}
+  .cond{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end;margin-bottom:18px;
+    border-left:3px solid var(--press);padding-left:18px}
+  .chk{display:flex!important;align-items:center;gap:10px;padding-bottom:11px}
+  .chk input{width:auto!important;margin:0}
+  .chk span{margin:0!important;font-size:12px!important;letter-spacing:.02em!important;text-transform:none!important;
+    color:var(--ink)!important}
+  .hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important}
+
+  .paths{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .path{display:block;text-align:left;background:var(--paper);border:1px solid var(--ink);
+    border-left:5px solid var(--ink);padding:22px 22px 24px;cursor:pointer;font-family:var(--sans);
+    transition:.25s cubic-bezier(.2,.7,.3,1);position:relative}
+  .path:hover{border-left-color:var(--press);transform:translateY(-2px)}
+  .path.on{background:var(--ink);border-color:var(--ink);border-left-color:var(--press)}
+  .path .ph{display:block;font-family:var(--display);font-size:clamp(20px,2.2vw,32px);text-transform:uppercase;
+    letter-spacing:-.01em;color:var(--ink)}
+  .path.on .ph{color:var(--paper)}
+  .path .pd{display:block;font-size:13px;line-height:1.5;color:var(--dim);margin-top:8px;max-width:34ch}
+  .path.on .pd{color:rgba(246,244,238,.65)}
+  .path .pa{position:absolute;top:20px;right:20px;font-size:20px;color:var(--press)}
+
+  #askbox{margin-top:24px}
+  #calwrap{margin-top:28px;border-top:4px solid var(--ink);padding-top:22px;text-align:left}
+  .calhead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+  .calhead b{font-family:var(--display);font-size:clamp(18px,2vw,28px);text-transform:uppercase;font-weight:400}
+  .calhead span{font-size:12px;color:var(--dim)}
+  #calframe{width:100%;height:660px;border:1px solid var(--hair);background:#fff}
+  #callink{display:inline-block;margin-top:12px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--press);text-decoration:none}
+  .sent{border:1px solid var(--ink);border-left:5px solid var(--press);padding:22px;margin-top:26px;text-align:left}
+  .sent b{font-family:var(--display);font-size:clamp(18px,2vw,28px);text-transform:uppercase;font-weight:400;display:block}
+  .sent p{font-size:14px;line-height:1.6;color:var(--dim);margin-top:8px}
+  #progress{position:fixed;top:0;left:0;height:3px;background:var(--press);width:0;z-index:50}
+
+  @media (max-width:900px){
+    .lead,.why,.svc-body,.steps,.cl-grid,.bylines,.frow,.cond,.paths{grid-template-columns:1fr}
+    #calframe{height:560px}
+    .pricelink{flex-wrap:wrap;gap:10px}
+    .pricelink .pl-a{margin-left:0}
+    #nav .l{display:none}
+    #nav .inner{height:46px}
+    #cover{min-height:0}
+    .lead{padding:38px 0 30px;gap:30px}
+    .coverfoot{padding-bottom:8px}
+    .why{padding:34px 0;gap:26px}
+    .subhead .hr{display:none}
+    .subhead .mid{white-space:normal;text-align:center;line-height:1.4}
+    .lead > div,.svc-body > div,.steps > div,.byline{border-right:0;padding:18px 0!important;
+      border-bottom:1px solid var(--hair)}
+    .subhead{grid-template-columns:1fr;text-align:center;gap:6px}
+    .subhead .r{text-align:center}
+    .cl-grid{grid-template-columns:1fr 1fr}
+    #badge{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<nav id="nav" aria-label="Main">
+  <div class="inner">
+    <a class="bm" href="#top">SEBNARO</a>
+    <a class="l" href="#why">Why us</a>
+    <a class="l" href="#websites">Websites</a>
+    <a class="l" href="#instagram">Instagram</a>
+    <a class="l" href="pricing.html">Pricing</a>
+    <a class="l" href="#work">Work</a>
+    <a class="l" href="#studio">Studio</a>
+    <a class="cta" href="#contact">Start a project</a>
+  </div>
+</nav>
+
+<div id="cover"><span id="top"></span>
+<div class="wrap">
+  <div class="rule thick"></div>
+  <div class="dateline">
+    <span>Vol. 01 · No. 01 — Est. 2026</span>
+    <span>Remote · Serving the US</span>
+  </div>
+  <div class="rule"></div>
+
+  <div class="masthead" id="mast"></div>
+
+  <div class="rule"></div>
+  <div class="subhead">
+    <span class="hr"></span>
+    <span class="mid">Websites &amp; Instagram marketing, built by two people who answer their own phone.</span>
+    <span class="hr"></span>
+  </div>
+</div>
+
+<div class="ticker">
+  <div id="tickinner">
+    <span>Custom websites — <i>no templates</i></span><span>·</span>
+    <span>Instagram content &amp; growth</span><span>·</span>
+    <span>Two services, <i>sold separately</i></span><span>·</span>
+    <span>Fixed scope, fixed price</span><span>·</span>
+    <span>You own everything we build</span><span>·</span>
+  </div>
+</div>
+
+<div class="wrap leadwrap">
+  <!-- LEAD -->
+  <section class="lead">
+    <div>
+      <h1>Small businesses don't need <em>more</em> marketing. They need one thing that works.</h1>
+      <div class="standfirst">Sebnaro builds websites and runs Instagram accounts for small and medium business. You can hire us for either one on its own — we've never believed a good site should be held hostage to a monthly retainer.</div>
+    </div>
+    <div class="col glance">
+      <div class="gh">At a glance</div>
+      <div class="s"><b>Three fixed packages</b><span>Websites</span></div>
+      <div class="s"><b>Month to month</b><span>Instagram</span></div>
+      <div class="s"><b>Agreed up front</b><span>Pricing</span></div>
+      <div class="s"><b>100% yours</b><span>Ownership</span></div>
+      <div class="s"><b>None</b><span>Account managers</span></div>
+    </div>
+  </section>
+  <div class="coverfoot">
+    <span>Two services · sold separately</span>
+    <a href="#why"><i>↓</i> Keep reading</a>
+  </div>
+</div>
+</div>
+
+<!-- KINETIC -->
+<section class="kinetic">
+  <div class="mrow a"><div class="mtrack" data-unit="WEBSITES THAT CLOSE"></div></div>
+  <div class="mrow b"><div class="mtrack" data-unit="FEEDS THAT FILL"></div></div>
+  <div class="mrow c"><div class="mtrack" data-unit="TAKE ONE OR &lt;span class='hi'&gt;TAKE BOTH&lt;/span&gt;"></div></div>
+</section>
+
+<div class="wrap">
+  <div class="kcap"><span>Two services · sold separately</span><span>Hover to hold a line still</span></div>
+
+  <!-- WHY -->
+  <section class="why" id="why">
+    <div class="col">
+      <h3>The problem</h3>
+      <p class="drop">Templates that look like the other nine businesses on the same street. Agencies that bill for the meeting about the meeting. Freelancers who vanish the week after launch, taking the login with them.</p>
+      <p>Meanwhile the phone doesn't ring, and nobody can tell you which of the four things you're paying for is the one that isn't working. So you post more, and the number stays the same.</p>
+    </div>
+    <div class="col">
+      <h3>Our answer</h3>
+      <p>Two founders, and only two services. One page of scope with the price and the dates on it, signed before anything starts.</p>
+      <p>You talk to the person building the thing — there is nobody else here to talk to. When it launches, the code, the accounts, and the logins are yours.</p>
+      <p>Hire us for the website. Hire us for the feed. Hire us for both. We'll never bundle one to sell the other.</p>
+    </div>
+  </section>
+
+  <!-- SERVICE 01 -->
+  <section class="svc" id="websites">
+    <div class="svc-top">
+      <span class="no">01</span>
+      <h2>Websites</h2>
+      <div class="meta">Fixed scope · fixed price<br><b>Three packages</b><br>Quoted before we start</div>
+    </div>
+    <div class="svc-body">
+      <div>
+        <h4 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:12px">The brief</h4>
+        <p style="font-size:13.5px;line-height:1.6;color:var(--dim)">Designed and coded from scratch around one job: turning the people who already found you into people who contact you.</p>
+      </div>
+      <div>
+        <h4 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:12px">Included</h4>
+        <ul><li>Strategy &amp; sitemap</li><li>Custom design, no themes</li><li>Full copywriting pass</li><li>Mobile-first build</li><li>Contact &amp; booking flows</li></ul>
+      </div>
+      <div>
+        <h4 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:12px">Under the hood</h4>
+        <ul><li>Core Web Vitals green</li><li>On-page SEO &amp; schema</li><li>Analytics &amp; call tracking</li><li>Google Business sync</li><li>You own the code</li></ul>
+      </div>
+      <div>
+        <h4 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:12px">After launch</h4>
+        <ul><li>30-day fix window</li><li>Edit training session</li><li>Optional care plan</li><li>Hosting handled</li><li>No hostage contracts</li></ul>
+      </div>
+    </div>
+    <div class="pull">If a visitor can't tell what you do, where you are, and how to reach you inside eight seconds, the site failed — however pretty it is.</div>
+    <a class="pricelink" href="pricing.html">
+      <span class="pl-k">Rate card</span>
+      <span class="pl-t">See the three website packages, what's in each, and the price</span>
+      <span class="pl-a">→</span>
+    </a>
+  </section>
+
+  <!-- SERVICE 02 -->
+  <section class="svc" id="instagram">
+    <div class="svc-top">
+      <span class="no">02</span>
+      <h2>Instagram</h2>
+      <div class="meta">Monthly · cancel any time<br><b>Three tiers</b><br>No lock-in, no minimum term</div>
+    </div>
+    <div class="svc-body">
+      <div>
+        <h4 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:12px">The brief</h4>
+        <p style="font-size:13.5px;line-height:1.6;color:var(--dim)">Not "posting." One strategy, a month of content built to be watched, and a single business outcome to aim it at.</p>
+      </div>
+      <div>
+        <h4 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:12px">Monthly</h4>
+        <ul><li>Content calendar</li><li>12–20 posts &amp; reels</li><li>Hooks &amp; captions</li><li>Story sequences</li><li>Scheduling &amp; publishing</li></ul>
+      </div>
+      <div>
+        <h4 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:12px">Growth</h4>
+        <ul><li>Local geo &amp; hashtag strategy</li><li>Reels-first cadence</li><li>Comment &amp; DM handling</li><li>Collab &amp; UGC outreach</li><li>Optional paid boosting</li></ul>
+      </div>
+      <div>
+        <h4 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:12px">Reporting</h4>
+        <ul><li>One-page monthly read</li><li>Reach → profile → action</li><li>Top &amp; bottom performers</li><li>Next month's thesis</li><li>Plain English, always</li></ul>
+      </div>
+    </div>
+    <div class="pull">Followers are a vanity number. We report the three that pay rent: profile visits, link taps, and inbound messages.</div>
+    <a class="pricelink" href="instagram-pricing.html">
+      <span class="pl-k">Rate card</span>
+      <span class="pl-t">See the three Instagram tiers, what's in each, and the price</span>
+      <span class="pl-a">→</span>
+    </a>
+  </section>
+</div>
+
+<!-- INVERTED PROCESS -->
+<section class="invert">
+  <div class="wrap">
+    <h3>Four steps.<br><em>No change-order theatre.</em></h3>
+    <div class="steps">
+      <div><div class="n">01</div><h4>Call</h4><p>Thirty minutes. What you sell, who buys it, what's leaking. You leave with a plan whether or not you hire us.</p><span class="when">Day 0</span></div>
+      <div><div class="n">02</div><h4>Scope</h4><p>One page: deliverables, price, dates. You sign the page, not a forty-page agreement.</p><span class="when">Day 1–3</span></div>
+      <div><div class="n">03</div><h4>Build</h4><p>You see it in week one, not week six. Revisions are already on the schedule, and feedback lives in one place.</p><span class="when">Week 1–2</span></div>
+      <div><div class="n">04</div><h4>Hand off</h4><p>Launch, training, and the keys. Every build includes 30 days of free support. Instagram rolls month to month.</p><span class="when">Launch →</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <!-- CLASSIFIEDS -->
+  <section class="classifieds" id="work">
+    <div class="cl-head">
+      <h3>Selected Work</h3>
+      <span>Slots reserved · live studies published on launch</span>
+    </div>
+    <div class="cl-grid">
+      <div class="ad"><div class="k">Website · Trades</div><h4>Quote-request rebuild</h4><p>Held for the first launch of the quarter.</p><span class="stamp">Reserved</span></div>
+      <div class="ad"><div class="k">Instagram · Food &amp; drink</div><h4>90-day reels study</h4><p>In progress. Published at the 90-day mark.</p><span class="stamp">Reserved</span></div>
+      <div class="ad"><div class="k">Both services</div><h4>Site + feed, one strategy</h4><p>Measured together, reported on one page.</p><span class="stamp">Reserved</span></div>
+      <div class="ad"><div class="k">Website · Appointments</div><h4>Booking-flow rebuild</h4><p>Held for a services client, Q4.</p><span class="stamp">Reserved</span></div>
+    </div>
+    <p style="font-size:13px;line-height:1.6;color:var(--dim);margin-top:16px;max-width:64ch">
+      We'd rather leave this page honest than fill it with stock mockups. Ask on the call and we'll walk you through the live builds, screen shared, no edit.
+    </p>
+  </section>
+
+  <!-- BYLINES -->
+  <section class="bylines" id="studio">
+    <div class="byline">
+      <span class="r">Co-founder · Web</span>
+      <h3>Genaro</h3>
+      <p>Runs design and build. Owns the site from the first wireframe to the analytics dashboard you actually read. If it's on the screen, it went through him.</p>
+    </div>
+    <div class="byline">
+      <span class="r">Co-founder · Social</span>
+      <h3>Sebastian</h3>
+      <p>Runs content and growth. Owns the calendar, the hooks, and the monthly read. If it's in the feed, it went through him.</p>
+    </div>
+  </section>
+
+  <!-- BACK PAGE -->
+  <section class="back" id="contact">
+    <span class="k">The back page</span>
+    <h2>Let's build the<br>thing that <em>works</em></h2>
+    <p class="backsub">Tell us what you sell and what isn't working. A couple of sentences is plenty — we'll take it from there.</p>
+
+    <form class="cform" id="cform" novalidate>
+      <div class="fstep"><span class="sn">01</span> Your details</div>
+      <div class="frow">
+        <label><span>Your name <i class="req">*</i></span><input type="text" name="name" placeholder="First and last"></label>
+        <label><span>Business</span><input type="text" name="business" placeholder="Company name"></label>
+      </div>
+      <div class="frow">
+        <label><span>Email <i class="req">*</i></span><input type="email" name="email" placeholder="you@business.com"></label>
+        <label><span>Phone <i class="req">*</i></span><input type="tel" name="phone" placeholder="(555) 123-4567"></label>
+      </div>
+      <div class="frow">
+        <label><span>Which service <i class="req">*</i></span>
+          <select name="service" id="service">
+            <option value="">Choose one…</option>
+            <option>Website</option>
+            <option>Instagram marketing</option>
+            <option>Both</option>
+          </select>
+        </label>
+        <div></div>
+      </div>
+
+      <div class="cond" id="cond-web" hidden>
+        <label><span>Your current website</span><input type="text" name="website" placeholder="yourbusiness.com"></label>
+        <label class="chk"><input type="checkbox" id="nowebsite" name="no_website" value="Yes"> <span>I don't have one yet</span></label>
+      </div>
+      <div class="cond" id="cond-ig" hidden>
+        <label><span>Your Instagram handle</span><input type="text" name="instagram" placeholder="@yourbusiness"></label>
+        <label class="chk"><input type="checkbox" id="noig" name="no_instagram" value="Yes"> <span>I don't have one yet</span></label>
+      </div>
+
+      <div class="fstep"><span class="sn">02</span> What next?</div>
+      <div class="paths">
+        <button type="button" class="path" id="path-book">
+          <span class="ph">Book a call</span>
+          <span class="pd">Pick a time from our calendar. Thirty minutes, no pitch deck.</span>
+          <span class="pa">→</span>
+        </button>
+        <button type="button" class="path" id="path-ask">
+          <span class="ph">Ask a question</span>
+          <span class="pd">Type it out and we'll answer by email, usually the same day.</span>
+          <span class="pa">→</span>
+        </button>
+      </div>
+
+      <div id="askbox" hidden>
+        <label class="full"><span>Your question <i class="req">*</i></span><textarea name="message" rows="4" placeholder="A sentence or two is plenty."></textarea></label>
+        <div class="fsend">
+          <button type="submit">Send question →</button>
+          <span class="fnote" id="fnote">No pitch deck, no follow-up sequence.</span>
+        </div>
+      </div>
+
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+    </form>
+
+    <div id="calwrap" hidden>
+      <div class="calhead"><b>Pick a time</b><span>Your details are already with us — just choose a slot.</span></div>
+      <iframe id="calframe" title="Book a call" loading="lazy"></iframe>
+      <a id="callink" href="#" target="_blank" rel="noopener">Calendar not loading? Open it in a new tab →</a>
+    </div>
+
+    <div class="sent" id="sentbox" hidden>
+      <b id="sentTitle">Got it.</b>
+      <p id="sentBody"></p>
+    </div>
+
+    <div class="colophon">
+      <span>Sebnaro LLC</span><span>Websites &amp; Instagram marketing</span>
+      <span><a href="pricing.html">Website pricing</a></span>
+      <span>Replies within one business day</span><span>Set in Anton, Fraunces &amp; Archivo</span>
+    </div>
+  </section>
+</div>
+
+
+<script>
+(function(){
+  /* masthead letters */
+  var m=document.getElementById('mast');
+  'SEBNARO'.split('').forEach(function(c,i){
+    var s=document.createElement('span'); s.textContent=c;
+    s.style.animationDelay=(0.055*i+0.1)+'s'; m.appendChild(s);
+  });
+
+  /* ticker duplicate for seamless loop */
+  var ti=document.getElementById('tickinner');
+  ti.innerHTML=ti.innerHTML+ti.innerHTML;
+
+  /* ---- seamless marquee rows ----
+     Each track is filled with enough repeats to cover the viewport twice,
+     then animated a constant −50%. Speed is px/second, so every row reads
+     at the same pace no matter how long its phrase is. */
+  var SPEED={a:88,b:64,c:112};
+  var tracks=[].slice.call(document.querySelectorAll('.mtrack'));
+
+  function buildMarquee(){
+    tracks.forEach(function(t){
+      var row=t.parentElement,
+          key=(row.className.match(/\b(a|b|c)\b/)||[,'a'])[1],
+          unit=t.dataset.unit,
+          piece='<span class="u">'+unit+'</span><span class="dot">—</span>';
+      t.style.animation='none';
+      t.innerHTML=piece;
+      var pw=t.scrollWidth||1,
+          need=Math.max(2,Math.ceil((row.clientWidth*1.2)/pw)+1),
+          set=new Array(need+1).join(piece);
+      t.innerHTML=set+set;
+      var setW=t.scrollWidth/2;
+      t.style.animation='';
+      t.style.animationDuration=(setW/SPEED[key]).toFixed(2)+'s';
+    });
+  }
+
+  /* progress bar */
+  var prog=document.getElementById('progress'), ticking=false;
+  function render(){
+    var y=window.scrollY||0, h=document.documentElement.scrollHeight-window.innerHeight;
+    prog.style.width=(h>0?(y/h*100):0)+'%';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){ if(!ticking){ticking=true;requestAnimationFrame(render);} },{passive:true});
+
+  var rt;
+  window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(buildMarquee,180); render(); });
+  /* nav reveal + active section */
+  var nav=document.getElementById('nav'), cover=document.getElementById('cover'),
+      links=[].slice.call(nav.querySelectorAll('a.l[href^="#"]')),
+      secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  function navUpdate(){
+    var past=window.scrollY>cover.offsetHeight-70;
+    nav.classList.toggle('on',past);
+    var y=window.scrollY+120, best=-1;
+    secs.forEach(function(el,i){ if(el&&el.offsetTop<=y) best=i; });
+    links.forEach(function(a,i){ a.classList.toggle('on',i===best); });
+  }
+  window.addEventListener('scroll',navUpdate,{passive:true});
+  navUpdate();
+
+  /* contact form — not wired to a backend yet */
+  /* ================= LEAD CAPTURE =================
+     TWO THINGS TO FILL IN BEFORE LAUNCH:
+       1. W3_KEY  — free access key from https://web3forms.com (enter your email, they send the key)
+       2. CAL_URL — your Cal.com booking link, e.g. https://cal.com/sebnaro/intro-call
+     Until both are set, the form runs in demo mode and warns instead of sending. */
+  var W3_KEY  = '6ce08e72-a4e0-4cda-b74a-5d4948c58c28';
+  var CAL_URL = 'PASTE_YOUR_CAL_COM_LINK_HERE';
+
+  var cf=document.getElementById('cform');
+  if(cf){
+    var svc=document.getElementById('service'),
+        condWeb=document.getElementById('cond-web'), condIg=document.getElementById('cond-ig'),
+        askbox=document.getElementById('askbox'), fnote=document.getElementById('fnote'),
+        bBook=document.getElementById('path-book'), bAsk=document.getElementById('path-ask'),
+        calwrap=document.getElementById('calwrap'), calframe=document.getElementById('calframe'),
+        callink=document.getElementById('callink'),
+        sentbox=document.getElementById('sentbox'),
+        sentTitle=document.getElementById('sentTitle'), sentBody=document.getElementById('sentBody'),
+        mode=null;
+
+    /* conditional fields follow the service choice */
+    function syncCond(){
+      var v=svc.value;
+      condWeb.hidden = !(v==='Website' || v==='Both');
+      condIg.hidden  = !(v==='Instagram marketing' || v==='Both');
+    }
+    svc.addEventListener('change',syncCond); syncCond();
+
+    function warn(msg){ fnote.textContent=msg; fnote.classList.add('err');
+      askbox.hidden=false; askbox.scrollIntoView({behavior:'smooth',block:'center'}); }
+
+    function validDetails(){
+      var d=new FormData(cf);
+      if(!d.get('name'))  return 'Add your name first.';
+      if(!d.get('email')) return 'Add an email so we can reply.';
+      if(!d.get('phone')) return 'Add a phone number.';
+      if(!d.get('service')) return 'Pick which service you need.';
+      var v=d.get('service');
+      if((v==='Website'||v==='Both') && !d.get('website') && !document.getElementById('nowebsite').checked)
+        return 'Add your website, or tick that you do not have one.';
+      if((v==='Instagram marketing'||v==='Both') && !d.get('instagram') && !document.getElementById('noig').checked)
+        return 'Add your Instagram handle, or tick that you do not have one.';
+      return null;
+    }
+
+    function send(kind){
+      var d=new FormData(cf);
+      d.append('access_key', W3_KEY);
+      d.append('from_name', 'Sebnaro website');
+      d.append('subject', '['+(kind==='book'?'BOOKING':'QUESTION')+'] '+(d.get('service')||'—')+' — '+(d.get('name')||''));
+      d.append('lead_type', kind==='book' ? 'Wants to book a call' : 'Asked a question');
+      if(W3_KEY.indexOf('PASTE_')===0){
+        return Promise.resolve({ok:false, demo:true});
+      }
+      return fetch('https://api.web3forms.com/submit',{method:'POST',body:d})
+        .then(function(r){ return r.json(); })
+        .then(function(j){ return {ok:!!j.success}; })
+        .catch(function(){ return {ok:false}; });
+    }
+
+    function showCalendar(){
+      var d=new FormData(cf),
+          q='?name='+encodeURIComponent(d.get('name')||'')+
+            '&email='+encodeURIComponent(d.get('email')||'')+
+            '&notes='+encodeURIComponent('Service: '+(d.get('service')||'')+
+              ' | Phone: '+(d.get('phone')||'')+
+              ' | Business: '+(d.get('business')||'')+
+              ' | Website: '+(d.get('website')|| (document.getElementById('nowebsite').checked?'none yet':''))+
+              ' | Instagram: '+(d.get('instagram')|| (document.getElementById('noig').checked?'none yet':'')));
+      if(CAL_URL.indexOf('PASTE_')===0){
+        sentbox.hidden=false;
+        sentTitle.textContent='Calendar not connected yet';
+        sentBody.textContent='Add your Cal.com link in the code (CAL_URL) and the booking calendar will appear here, pre-filled with these answers.';
+        sentbox.scrollIntoView({behavior:'smooth',block:'center'});
+        return;
+      }
+      calframe.src=CAL_URL+q; callink.href=CAL_URL+q;
+      calwrap.hidden=false;
+      calwrap.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+
+    bBook.addEventListener('click',function(){
+      var err=validDetails(); if(err){ warn(err); return; }
+      mode='book'; bBook.classList.add('on'); bAsk.classList.remove('on'); askbox.hidden=true;
+      send('book').then(function(res){
+        if(res.demo){
+          sentbox.hidden=false;
+          sentTitle.textContent='Demo mode';
+          sentBody.textContent='Your details were not emailed — add your Web3Forms access key (W3_KEY) in the code to switch this on.';
+        }
+        showCalendar();
+      });
+    });
+
+    bAsk.addEventListener('click',function(){
+      mode='ask'; bAsk.classList.add('on'); bBook.classList.remove('on');
+      calwrap.hidden=true; askbox.hidden=false;
+      fnote.classList.remove('err'); fnote.textContent='No pitch deck, no follow-up sequence.';
+      askbox.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+
+    cf.addEventListener('submit',function(e){
+      e.preventDefault();
+      var err=validDetails(); if(err){ warn(err); return; }
+      if(!cf.message.value.trim()){ warn('Type your question first.'); return; }
+      fnote.classList.remove('err'); fnote.textContent='Sending…';
+      send('ask').then(function(res){
+        cf.hidden=true; sentbox.hidden=false;
+        if(res.demo){
+          sentTitle.textContent='Demo mode';
+          sentBody.textContent='Nothing was emailed — add your Web3Forms access key (W3_KEY) in the code to switch this on.';
+        }else if(res.ok){
+          sentTitle.textContent='Got it.';
+          sentBody.textContent='Your question is with us. You will hear back within one business day, from a person.';
+        }else{
+          cf.hidden=false;
+          warn('Something went wrong sending that. Try again in a moment.');
+        }
+        sentbox.scrollIntoView({behavior:'smooth',block:'center'});
+      });
+    });
+  }
+
+  buildMarquee(); render();
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(buildMarquee);
+})();
+</script>
+</body>
+</html>
