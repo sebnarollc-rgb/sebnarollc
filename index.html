@@ -538,7 +538,7 @@
       </div>
       <div class="frow">
         <label><span>Email <i class="req">*</i></span><input type="email" name="email" placeholder="you@business.com"></label>
-        <label><span>Phone <i class="req">*</i></span><input type="tel" name="phone" placeholder="(555) 123-4567"></label>
+        <label><span>Best number to call <i class="req">*</i></span><input type="tel" name="phone" placeholder="(555) 123-4567"></label>
       </div>
       <div class="frow">
         <label><span>Which service <i class="req">*</i></span>
@@ -570,7 +570,7 @@
         </button>
         <button type="button" class="path" id="path-ask">
           <span class="ph">Ask a question</span>
-          <span class="pd">Type it out and we'll answer by email, usually the same day.</span>
+          <span class="pd">Type it out and one of us will be in touch shortly.</span>
           <span class="pa">→</span>
         </button>
       </div>
@@ -722,6 +722,7 @@
       var d=new FormData(cf);
       d.append('access_key', W3_KEY);
       d.append('from_name', 'Sebnaro website');
+      d.append('replyto', d.get('email')||'');   /* hitting Reply in Gmail goes to the lead */
       d.append('subject', '['+(kind==='book'?'BOOKING':'QUESTION')+'] '+(d.get('service')||'—')+' — '+(d.get('name')||''));
       d.append('lead_type', kind==='book' ? 'Wants to book a call' : 'Asked a question');
       if(W3_KEY.indexOf('PASTE_')===0){
@@ -787,7 +788,7 @@
           sentBody.textContent='Nothing was emailed — add your Web3Forms access key (W3_KEY) in the code to switch this on.';
         }else if(res.ok){
           sentTitle.textContent='Got it.';
-          sentBody.textContent='Your question is with us. You will hear back within one business day, from a person.';
+          sentBody.textContent='Thanks for reaching out. One of us will be in touch shortly.';
         }else{
           cf.hidden=false;
           warn('Something went wrong sending that. Try again in a moment.');
