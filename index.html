@@ -135,8 +135,13 @@
   .svc-top .meta b{color:var(--press)}
   .svc-body{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:26px;border-top:1px solid var(--ink);
     padding-top:20px}
-  .svc-body > div{padding:0 22px;border-right:1px solid var(--hair)}
-  .svc-body > div:first-child{padding-left:0} .svc-body > div:last-child{border-right:0;padding-right:0}
+  .svc-body .ch{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);
+    border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:12px}
+  .svc-body > div,.svc-body > details{padding:0 22px;border-right:1px solid var(--hair)}
+  .svc-body > div:first-child{padding-left:0}
+  .svc-body > details:last-child{border-right:0;padding-right:0}
+  .acc > summary{list-style:none;display:block}
+  .acc > summary::-webkit-details-marker{display:none}
   .svc-body ul{list-style:none}
   .svc-body li{font-size:13.5px;line-height:1.45;padding:9px 0;border-bottom:1px dotted var(--hair)}
   .svc-body li:last-child{border-bottom:0}
@@ -311,6 +316,14 @@
     .subhead .mid{white-space:normal;text-align:center;line-height:1.4}
     .lead > div,.svc-body > div,.steps > div,.byline{border-right:0;padding:18px 0!important;
       border-bottom:1px solid var(--hair)}
+    /* service lists collapse into accordions on phones */
+    .svc-body > details{border-right:0;border-bottom:1px solid var(--hair);padding:0!important}
+    .acc > summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;
+      gap:12px;padding:16px 0;-webkit-tap-highlight-color:transparent}
+    .acc > summary .ch{border-bottom:0;padding-bottom:0;margin-bottom:0}
+    .acc > summary::after{content:'+';font-family:var(--display);font-size:22px;line-height:1;color:var(--press)}
+    .acc[open] > summary::after{content:'\2013'}
+    .acc > ul{padding-bottom:14px}
     .subhead{grid-template-columns:1fr;text-align:center;gap:6px}
     .subhead .r{text-align:center}
     .cl-grid{grid-template-columns:1fr 1fr}
@@ -421,21 +434,21 @@
     </div>
     <div class="svc-body">
       <div>
-        <h4 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:12px">The brief</h4>
+        <h4 class="ch">The brief</h4>
         <p style="font-size:13.5px;line-height:1.6;color:var(--dim)">Designed and coded from scratch around one job: turning the people who already found you into people who contact you.</p>
       </div>
-      <div>
-        <h4 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:12px">Included</h4>
+      <details class="acc">
+        <summary><h4 class="ch">Included</h4></summary>
         <ul><li>Strategy &amp; sitemap</li><li>Custom design, no themes</li><li>Full copywriting pass</li><li>Mobile-first build</li><li>Contact &amp; booking flows</li></ul>
-      </div>
-      <div>
-        <h4 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:12px">Under the hood</h4>
+      </details>
+      <details class="acc">
+        <summary><h4 class="ch">Under the hood</h4></summary>
         <ul><li>Core Web Vitals green</li><li>On-page SEO &amp; schema</li><li>Analytics &amp; call tracking</li><li>Google Business sync</li><li>You own the code</li></ul>
-      </div>
-      <div>
-        <h4 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:12px">After launch</h4>
+      </details>
+      <details class="acc">
+        <summary><h4 class="ch">After launch</h4></summary>
         <ul><li>30-day fix window</li><li>Edit training session</li><li>Optional care plan</li><li>Hosting handled</li><li>No hostage contracts</li></ul>
-      </div>
+      </details>
     </div>
     <div class="pull">If a visitor can't tell what you do, where you are, and how to reach you inside eight seconds, the site failed — however pretty it is.</div>
     <a class="pricelink" href="pricing.html">
@@ -454,21 +467,21 @@
     </div>
     <div class="svc-body">
       <div>
-        <h4 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:12px">The brief</h4>
+        <h4 class="ch">The brief</h4>
         <p style="font-size:13.5px;line-height:1.6;color:var(--dim)">Not "posting." One strategy, a month of content built to be watched, and a single business outcome to aim it at.</p>
       </div>
-      <div>
-        <h4 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:12px">Monthly</h4>
+      <details class="acc">
+        <summary><h4 class="ch">Monthly</h4></summary>
         <ul><li>Content calendar</li><li>12–20 posts &amp; reels</li><li>Hooks &amp; captions</li><li>Story sequences</li><li>Scheduling &amp; publishing</li></ul>
-      </div>
-      <div>
-        <h4 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:12px">Growth</h4>
+      </details>
+      <details class="acc">
+        <summary><h4 class="ch">Growth</h4></summary>
         <ul><li>Local geo &amp; hashtag strategy</li><li>Reels-first cadence</li><li>Comment &amp; DM handling</li><li>Collab &amp; UGC outreach</li><li>Optional paid boosting</li></ul>
-      </div>
-      <div>
-        <h4 style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:12px">Reporting</h4>
+      </details>
+      <details class="acc">
+        <summary><h4 class="ch">Reporting</h4></summary>
         <ul><li>One-page monthly read</li><li>Reach → profile → action</li><li>Top &amp; bottom performers</li><li>Next month's thesis</li><li>Plain English, always</li></ul>
-      </div>
+      </details>
     </div>
     <div class="pull">Followers are a vanity number. We report the three that pay rent: profile visits, link taps, and inbound messages.</div>
     <a class="pricelink" href="instagram-pricing.html">
@@ -616,6 +629,15 @@
   });
 
   /* ticker duplicate for seamless loop */
+  /* Service lists are accordions on phones, always-open columns on desktop. */
+  var accs=[].slice.call(document.querySelectorAll('.acc'));
+  function syncAccordions(){
+    var wide = window.innerWidth > 900;
+    accs.forEach(function(d){ d.open = wide; });
+  }
+  syncAccordions();
+  window.addEventListener('resize',syncAccordions);
+
   var ti=document.getElementById('tickinner');
   ti.innerHTML=ti.innerHTML+ti.innerHTML;
 
