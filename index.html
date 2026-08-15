@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sebnaro — Websites &amp; Instagram Marketing for Small Business</title>
-<meta name="description" content="Sebnaro builds custom websites and runs Instagram marketing for small and medium business. Two services, sold separately. Fixed-price website packages from $899.">
+<title>Sebnaro — Websites &amp; Instagram Marketing</title>
+<meta name="description" content="Sebnaro builds custom websites and runs Instagram marketing for businesses. Websites from $899, Instagram from $750 a month. Miami, working nationwide.">
 <meta property="og:title" content="Sebnaro — Websites &amp; Instagram Marketing">
-<meta property="og:description" content="Custom websites and Instagram marketing for small and medium business. Two founders, two services, no account managers.">
+<meta property="og:description" content="Custom websites and Instagram marketing. Two founders, two services, sold separately.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#F6F4EE">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,14 +49,6 @@
   .subhead .mid{font-family:var(--serif);font-style:italic;font-size:clamp(13px,1.15vw,17px);
     color:var(--dim);white-space:nowrap}
 
-  /* ---------- ticker ---------- */
-  .ticker{background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;padding:7px 0;
-    font-size:10px;letter-spacing:.2em;text-transform:uppercase}
-  .ticker div{display:inline-block;animation:tick 44s linear infinite}
-  .ticker span{padding:0 30px}
-  .ticker i{color:#5C7BFF;font-style:normal}
-  @keyframes tick{to{transform:translateX(-50%)}}
-
   /* ---------- cover (first screen only) ---------- */
   #cover{min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
   .leadwrap{flex:1;display:flex;flex-direction:column;min-height:0}
@@ -65,7 +57,9 @@
     text-transform:uppercase;color:var(--dim)}
   .coverfoot a{color:var(--dim);text-decoration:none;display:flex;align-items:center;gap:9px;transition:color .25s}
   .coverfoot a:hover{color:var(--press)}
-  .coverfoot a i{font-style:normal;display:inline-block;animation:nudge 2.4s ease-in-out infinite}
+  .coverfoot a.cbook{background:var(--ink);color:var(--paper);padding:11px 20px;font-weight:600;
+    letter-spacing:.14em;transition:background .25s}
+  .coverfoot a.cbook:hover{background:var(--press);color:#fff}
   @keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 
   /* ---------- lead spread ---------- */
@@ -93,6 +87,9 @@
     font-size:12px;gap:12px}
   .col .fact b{font-weight:600}
 
+  .lead .anchor{margin-top:20px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+  .lead .anchor b{color:var(--ink);font-weight:600}
+
   /* ---------- kinetic band ---------- */
   .kinetic{padding:clamp(26px,3.6vw,52px) 0;border-top:4px solid var(--ink);
     border-bottom:1px solid var(--ink);position:relative}
@@ -115,7 +112,7 @@
   .kinetic:hover .mtrack{animation-play-state:paused}
   .kcap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:10px;letter-spacing:.2em;
     text-transform:uppercase;color:var(--dim);padding-top:16px;margin-top:14px;border-top:1px solid var(--hair)}
-  @media (prefers-reduced-motion:reduce){.mtrack{animation:none!important}.ticker div{animation:none}}
+  @media (prefers-reduced-motion:reduce){.mtrack{animation:none!important}}
 
   /* ---------- why (problem / answer) ---------- */
   .why{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);
@@ -182,6 +179,30 @@
     color:var(--dim);border:1px solid var(--hair);padding:3px 7px}
   .ad:hover .stamp{border-color:rgba(246,244,238,.35);color:rgba(246,244,238,.6)}
 
+  /* ---------- case study ---------- */
+  .case{display:grid;grid-template-columns:1fr 2fr;gap:clamp(24px,4vw,64px);
+    border:1px solid var(--ink);border-top:0;padding:clamp(22px,3vw,38px)}
+  .case-meta .k{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--press)}
+  .case-meta h4{font-family:var(--display);font-size:clamp(26px,3.2vw,46px);text-transform:uppercase;
+    letter-spacing:-.02em;line-height:1;margin:10px 0 12px}
+  .case-sum{font-size:14px;line-height:1.6;color:var(--dim)}
+  .case-facts{display:flex;gap:26px;margin-top:20px;padding-top:16px;border-top:1px solid var(--hair)}
+  .case-facts b{display:block;font-family:var(--display);font-size:22px;font-weight:400;letter-spacing:-.01em}
+  .case-facts span{display:block;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--dim);margin-top:4px}
+  .case-body{display:grid;gap:20px}
+  .case-body h5{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press);
+    border-bottom:1px solid var(--hair);padding-bottom:8px;margin-bottom:10px}
+  .case-body p{font-size:14.5px;line-height:1.62;color:var(--dim);max-width:62ch}
+
+  /* ---------- guarantee ---------- */
+  .promise{border-top:4px solid var(--ink);border-bottom:1px solid var(--ink);
+    padding:clamp(34px,4.6vw,68px) 0;text-align:center}
+  .promise .pk{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--press)}
+  .promise h3{font-family:var(--display);font-size:clamp(26px,4.4vw,66px);line-height:1.06;
+    text-transform:uppercase;letter-spacing:-.02em;margin:14px auto 16px;max-width:18ch}
+  .promise p{font-size:14.5px;line-height:1.62;color:var(--dim);max-width:56ch;margin:0 auto}
+
   /* ---------- founders ---------- */
   .bylines{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:4px solid var(--ink);
     border-bottom:1px solid var(--ink);padding:34px 0}
@@ -191,6 +212,12 @@
   .byline h3{font-family:var(--display);font-size:clamp(34px,4.4vw,72px);line-height:.9;text-transform:uppercase;
     letter-spacing:-.02em;margin:12px 0 12px}
   .byline p{font-size:14px;line-height:1.62;color:var(--dim);max-width:40ch}
+  .byline .shot{width:104px;height:104px;border:1px solid var(--hair);margin-bottom:16px;
+    background:repeating-linear-gradient(45deg,transparent 0 9px,rgba(13,13,11,.05) 9px 10px);
+    display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--dim);background-size:cover;background-position:center}
+  .byline .shot::after{content:'Photo'}
+  .byline .shot[style*="url"]::after{content:''}
 
   /* ---------- back page ---------- */
   .back{padding:clamp(52px,7vw,110px) 0 40px;text-align:center}
@@ -288,6 +315,10 @@
   .path.on .pd{color:rgba(246,244,238,.65)}
   .path .pa{position:absolute;top:20px;right:20px;font-size:20px;color:var(--press)}
 
+  .path.alt{border-left-width:1px;background:transparent}
+  .path.alt .ph{font-family:var(--sans);font-size:clamp(14px,1.3vw,17px);font-weight:600;
+    text-transform:none;letter-spacing:-.01em}
+  .path.alt .pa{font-size:16px;color:var(--dim)}
   #askbox{margin-top:24px}
   #calwrap{margin-top:28px;border-top:4px solid var(--ink);padding-top:22px;text-align:left}
   .calhead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:16px}
@@ -302,7 +333,7 @@
   #progress{position:fixed;top:0;left:0;height:3px;background:var(--press);width:0;z-index:50}
 
   @media (max-width:900px){
-    .lead,.why,.svc-body,.steps,.cl-grid,.bylines,.frow,.cond,.paths{grid-template-columns:1fr}
+    .lead,.why,.svc-body,.steps,.cl-grid,.bylines,.frow,.cond,.paths,.case{grid-template-columns:1fr}
     #calframe{height:560px}
     .pricelink{flex-wrap:wrap;gap:10px}
     .pricelink .pl-a{margin-left:0}
@@ -338,12 +369,9 @@
 <nav id="nav" aria-label="Main">
   <div class="inner">
     <a class="bm" href="#top">SEBNARO</a>
-    <a class="l" href="#why">Why us</a>
     <a class="l" href="#websites">Websites</a>
     <a class="l" href="#instagram">Instagram</a>
     <a class="l" href="pricing.html">Pricing</a>
-    <a class="l" href="#work">Work</a>
-    <a class="l" href="#studio">Studio</a>
     <a class="cta" href="#contact">Start a project</a>
   </div>
 </nav>
@@ -352,8 +380,8 @@
 <div class="wrap">
   <div class="rule thick"></div>
   <div class="dateline">
-    <span>Vol. 01 · No. 01 — Est. 2026</span>
-    <span>Remote · Serving the US</span>
+    <span>Vol. 01 · No. 01</span>
+    <span>Miami · Working nationwide</span>
   </div>
   <div class="rule"></div>
 
@@ -367,22 +395,14 @@
   </div>
 </div>
 
-<div class="ticker">
-  <div id="tickinner">
-    <span>Custom websites — <i>no templates</i></span><span>·</span>
-    <span>Instagram content &amp; growth</span><span>·</span>
-    <span>Two services, <i>sold separately</i></span><span>·</span>
-    <span>Fixed scope, fixed price</span><span>·</span>
-    <span>You own everything we build</span><span>·</span>
-  </div>
-</div>
 
 <div class="wrap leadwrap">
   <!-- LEAD -->
   <section class="lead">
     <div>
-      <h1>Small businesses don't need <em>more</em> marketing. They need one thing that works.</h1>
-      <div class="standfirst">Sebnaro builds websites and runs Instagram accounts for small and medium business. You can hire us for either one on its own — we've never believed a good site should be held hostage to a monthly retainer.</div>
+      <h1>Websites and Instagram that turn the people who already found you into people who <em>book</em>.</h1>
+      <div class="standfirst">Sebnaro builds websites and runs Instagram accounts for businesses. Hire us for either one on its own.</div>
+      <div class="anchor">Websites from <b>$899</b> · Instagram from <b>$750</b>/mo</div>
     </div>
     <div class="col glance">
       <div class="gh">At a glance</div>
@@ -390,12 +410,12 @@
       <div class="s"><b>Month to month</b><span>Instagram</span></div>
       <div class="s"><b>Agreed up front</b><span>Pricing</span></div>
       <div class="s"><b>100% yours</b><span>Ownership</span></div>
-      <div class="s"><b>None</b><span>Account managers</span></div>
+      <div class="s"><b>Straight to the founders</b><span>Who you work with</span></div>
     </div>
   </section>
   <div class="coverfoot">
     <span>Two services · sold separately</span>
-    <a href="#why"><i>↓</i> Keep reading</a>
+    <a class="cbook" href="#contact">Book a call</a>
   </div>
 </div>
 </div>
@@ -408,7 +428,7 @@
 </section>
 
 <div class="wrap">
-  <div class="kcap"><span>Two services · sold separately</span><span>Hover to hold a line still</span></div>
+  <div class="kcap"><span>Hover to hold a line still</span></div>
 
   <!-- WHY -->
   <section class="why" id="why">
@@ -420,7 +440,7 @@
     <div class="col">
       <h3>Our answer</h3>
       <p>Two founders, and only two services. One page of scope with the price and the dates on it, signed before anything starts.</p>
-      <p>You talk to the person building the thing — there is nobody else here to talk to. When it launches, the code, the accounts, and the logins are yours.</p>
+      <p>You talk to the person building the thing. When it launches, the code, the accounts, and the logins are yours.</p>
       <p>Hire us for the website. Hire us for the feed. Hire us for both. We'll never bundle one to sell the other.</p>
     </div>
   </section>
@@ -439,15 +459,15 @@
       </div>
       <details class="acc">
         <summary><h4 class="ch">Included</h4></summary>
-        <ul><li>Strategy &amp; sitemap</li><li>Custom design, no themes</li><li>Full copywriting pass</li><li>Mobile-first build</li><li>Contact &amp; booking flows</li></ul>
+        <ul><li>Full copywriting pass</li><li>Contact &amp; booking flows</li></ul>
       </details>
       <details class="acc">
         <summary><h4 class="ch">Under the hood</h4></summary>
-        <ul><li>Core Web Vitals green</li><li>On-page SEO &amp; schema</li><li>Analytics &amp; call tracking</li><li>Google Business sync</li><li>You own the code</li></ul>
+        <ul><li>Core Web Vitals green</li><li>On-page SEO &amp; schema</li><li>Analytics &amp; call tracking</li><li>You own the code</li></ul>
       </details>
       <details class="acc">
         <summary><h4 class="ch">After launch</h4></summary>
-        <ul><li>30-day fix window</li><li>Edit training session</li><li>Optional care plan</li><li>Hosting handled</li><li>No hostage contracts</li></ul>
+        <ul><li>30-day fix window</li><li>Edit training session</li><li>Optional care plan</li><li>No hostage contracts</li></ul>
       </details>
     </div>
     <div class="pull">If a visitor can't tell what you do, where you are, and how to reach you inside eight seconds, the site failed — however pretty it is.</div>
@@ -465,6 +485,7 @@
       <h2>Instagram</h2>
       <div class="meta">Monthly · cancel any time<br><b>Three tiers</b><br>No lock-in, no minimum term</div>
     </div>
+    <div class="pull">Followers are a vanity number. We report the three that pay rent: profile visits, link taps, and inbound messages.</div>
     <div class="svc-body">
       <div>
         <h4 class="ch">The brief</h4>
@@ -472,18 +493,17 @@
       </div>
       <details class="acc">
         <summary><h4 class="ch">Monthly</h4></summary>
-        <ul><li>Content calendar</li><li>12–20 posts &amp; reels</li><li>Hooks &amp; captions</li><li>Story sequences</li><li>Scheduling &amp; publishing</li></ul>
+        <ul><li>Content calendar</li><li>4–20 reels a month, by tier</li><li>Story sequences</li></ul>
       </details>
       <details class="acc">
         <summary><h4 class="ch">Growth</h4></summary>
-        <ul><li>Local geo &amp; hashtag strategy</li><li>Reels-first cadence</li><li>Comment &amp; DM handling</li><li>Collab &amp; UGC outreach</li><li>Optional paid boosting</li></ul>
+        <ul><li>Local geo &amp; hashtag strategy</li><li>Reels-first cadence</li><li>Comment &amp; DM handling</li></ul>
       </details>
       <details class="acc">
         <summary><h4 class="ch">Reporting</h4></summary>
-        <ul><li>One-page monthly read</li><li>Reach → profile → action</li><li>Top &amp; bottom performers</li><li>Next month's thesis</li><li>Plain English, always</li></ul>
+        <ul><li>One-page monthly read</li><li>Reach → profile → action</li><li>Top &amp; bottom performers</li></ul>
       </details>
     </div>
-    <div class="pull">Followers are a vanity number. We report the three that pay rent: profile visits, link taps, and inbound messages.</div>
     <a class="pricelink" href="instagram-pricing.html">
       <span class="pl-k">Rate card</span>
       <span class="pl-t">See the three Instagram tiers, what's in each, and the price</span>
@@ -495,11 +515,11 @@
 <!-- INVERTED PROCESS -->
 <section class="invert">
   <div class="wrap">
-    <h3>Four steps.<br><em>No change-order theatre.</em></h3>
+    <h3>Four steps.<br><em>No surprise invoices.</em></h3>
     <div class="steps">
-      <div><div class="n">01</div><h4>Call</h4><p>Thirty minutes. What you sell, who buys it, what's leaking. You leave with a plan whether or not you hire us.</p><span class="when">Day 0</span></div>
+      <div><div class="n">01</div><h4>Call</h4><p>Thirty minutes. What you sell, who buys it, and what's leaking.</p><span class="when">Day 0</span></div>
       <div><div class="n">02</div><h4>Scope</h4><p>One page: deliverables, price, dates. You sign the page, not a forty-page agreement.</p><span class="when">Day 1–3</span></div>
-      <div><div class="n">03</div><h4>Build</h4><p>You see it in week one, not week six. Revisions are already on the schedule, and feedback lives in one place.</p><span class="when">Week 1–2</span></div>
+      <div><div class="n">03</div><h4>Build</h4><p>You see it in week one. Revisions are already on the schedule, and feedback lives in one place.</p><span class="when">1–2 weeks</span></div>
       <div><div class="n">04</div><h4>Hand off</h4><p>Launch, training, and the keys. Every build includes 30 days of free support. Instagram rolls month to month.</p><span class="when">Launch →</span></div>
     </div>
   </div>
@@ -509,28 +529,54 @@
   <!-- CLASSIFIEDS -->
   <section class="classifieds" id="work">
     <div class="cl-head">
-      <h3>Selected Work</h3>
-      <span>Slots reserved · live studies published on launch</span>
+      <h3>Recent work</h3>
+      <span>Most recent build</span>
     </div>
-    <div class="cl-grid">
-      <div class="ad"><div class="k">Website · Trades</div><h4>Quote-request rebuild</h4><p>Held for the first launch of the quarter.</p><span class="stamp">Reserved</span></div>
-      <div class="ad"><div class="k">Instagram · Food &amp; drink</div><h4>90-day reels study</h4><p>In progress. Published at the 90-day mark.</p><span class="stamp">Reserved</span></div>
-      <div class="ad"><div class="k">Both services</div><h4>Site + feed, one strategy</h4><p>Measured together, reported on one page.</p><span class="stamp">Reserved</span></div>
-      <div class="ad"><div class="k">Website · Appointments</div><h4>Booking-flow rebuild</h4><p>Held for a services client, Q4.</p><span class="stamp">Reserved</span></div>
+
+    <div class="case">
+      <div class="case-meta">
+        <span class="k">Website · Law firm</span>
+        <h4>[FIRM NAME]</h4>
+        <p class="case-sum">[One line on who they are and what they do.]</p>
+        <div class="case-facts">
+          <div><b>[Package]</b><span>Build</span></div>
+          <div><b>[Weeks]</b><span>Time to live</span></div>
+        </div>
+      </div>
+      <div class="case-body">
+        <div>
+          <h5>What was broken</h5>
+          <p>[The state before. What the old site did or failed to do, and what it cost them.]</p>
+        </div>
+        <div>
+          <h5>What we built</h5>
+          <p>[The build. Pages, the intake form, anything custom, the dashboard if there was one.]</p>
+        </div>
+        <div>
+          <h5>What changed</h5>
+          <p>[The result. A number if you have one, an honest observation if you do not.]</p>
+        </div>
+      </div>
     </div>
-    <p style="font-size:13px;line-height:1.6;color:var(--dim);margin-top:16px;max-width:64ch">
-      We'd rather leave this page honest than fill it with stock mockups. Ask on the call and we'll walk you through the live builds, screen shared, no edit.
-    </p>
   </section>
 
   <!-- BYLINES -->
+  <section class="promise">
+    <div class="pk">Our guarantee</div>
+    <h3>Live in 30 days, or you don't pay for the build.</h3>
+    <p>If your site is not live within 30 days of the scope being signed, and the delay is on us,
+       the build is free. We would rather carry that risk than ask you to.</p>
+  </section>
+
   <section class="bylines" id="studio">
     <div class="byline">
+      <div class="shot" data-who="Genaro"></div>
       <span class="r">Co-founder · Web</span>
       <h3>Genaro</h3>
       <p>Runs design and build. Owns the site from the first wireframe to the analytics dashboard you actually read. If it's on the screen, it went through him.</p>
     </div>
     <div class="byline">
+      <div class="shot" data-who="Sebastian"></div>
       <span class="r">Co-founder · Social</span>
       <h3>Sebastian</h3>
       <p>Runs content and growth. Owns the calendar, the hooks, and the monthly read. If it's in the feed, it went through him.</p>
@@ -578,10 +624,10 @@
       <div class="paths">
         <button type="button" class="path" id="path-book">
           <span class="ph">Book a call</span>
-          <span class="pd">Pick a time from our calendar. Thirty minutes, no pitch deck.</span>
+          <span class="pd">Thirty minutes. You leave with a plan whether or not you hire us.</span>
           <span class="pa">→</span>
         </button>
-        <button type="button" class="path" id="path-ask">
+        <button type="button" class="path alt" id="path-ask">
           <span class="ph">Ask a question</span>
           <span class="pd">Type it out and one of us will be in touch shortly.</span>
           <span class="pa">→</span>
@@ -602,7 +648,7 @@
     <div id="calwrap" hidden>
       <div class="calhead"><b>Pick a time</b><span>Your details are already with us — just choose a slot.</span></div>
       <iframe id="calframe" title="Book a call" loading="lazy"></iframe>
-      <a id="callink" href="#" target="_blank" rel="noopener">Calendar not loading? Open it in a new tab →</a>
+      <a id="callink" href="https://cal.com/sebnaro" target="_blank" rel="noopener">Calendar not loading? Open it in a new tab →</a>
     </div>
 
     <div class="sent" id="sentbox" hidden>
@@ -613,7 +659,7 @@
     <div class="colophon">
       <span>Sebnaro LLC</span><span>Websites &amp; Instagram marketing</span>
       <span><a href="pricing.html">Website pricing</a></span>
-      <span>Replies within one business day</span><span>Set in Anton, Fraunces &amp; Archivo</span>
+      <span>Replies within one business day</span>
     </div>
   </section>
 </div>
@@ -637,9 +683,6 @@
   }
   syncAccordions();
   window.addEventListener('resize',syncAccordions);
-
-  var ti=document.getElementById('tickinner');
-  ti.innerHTML=ti.innerHTML+ti.innerHTML;
 
   /* ---- seamless marquee rows ----
      Each track is filled with enough repeats to cover the viewport twice,
