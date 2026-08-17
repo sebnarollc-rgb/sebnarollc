@@ -787,6 +787,24 @@
       return null;
     }
 
+    /* Alerts the Telegram group. Fire-and-forget: never blocks or breaks the submit. */
+    function pingTelegram(d){
+      try{
+        if(location.protocol.indexOf('http')!==0) return;   /* skip when opened as a local file */
+        fetch('/api/notify',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({
+            name:d.get('name')||'', business:d.get('business')||'',
+            phone:d.get('phone')||'', email:d.get('email')||'',
+            service:d.get('service')||'',
+            website:d.get('website')||'', instagram:d.get('instagram')||'',
+            message:d.get('message')||''
+          })
+        }).catch(function(){});
+      }catch(e){}
+    }
+
     function send(kind){
       var d=new FormData(cf);
       d.append('access_key', W3_KEY);
@@ -794,6 +812,7 @@
       d.append('replyto', d.get('email')||'');   /* hitting Reply in Gmail goes to the lead */
       d.append('subject', '['+(kind==='book'?'BOOKING':'QUESTION')+'] '+(d.get('service')||'—')+' — '+(d.get('name')||''));
       d.append('lead_type', kind==='book' ? 'Wants to book a call' : 'Asked a question');
+      if(kind==='ask') pingTelegram(d);
       if(W3_KEY.indexOf('PASTE_')===0){
         return Promise.resolve({ok:false, demo:true});
       }
