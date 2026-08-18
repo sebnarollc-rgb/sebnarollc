@@ -35,7 +35,7 @@ function buildMessage(d) {
   if (d.email)    lines.push('<b>Email:</b> '    + esc(d.email));
   if (d.service)  lines.push('<b>Wants:</b> '    + esc(d.service));
   if (d.website)  lines.push('<b>Site:</b> '     + esc(d.website));
-  if (d.instagram)lines.push('<b>Instagram:</b> '+ esc(d.instagram));
+  if (d.instagram)lines.push('<b>Handle:</b> '+ esc(d.instagram));
   if (d.message) {
     lines.push('');
     lines.push(esc(d.message));
