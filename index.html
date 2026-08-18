@@ -347,6 +347,9 @@
     .subhead .mid{white-space:normal;text-align:center;line-height:1.4}
     .lead > div,.svc-body > div,.steps > div,.byline{border-right:0;padding:18px 0!important;
       border-bottom:1px solid var(--hair)}
+    /* .steps sits on the dark .invert panel — needs a light hairline, not var(--hair) */
+    .steps > div{border-bottom-color:rgba(246,244,238,.2)}
+    .steps > div:last-child{border-bottom:0}
     /* service lists collapse into accordions on phones */
     .svc-body > details{border-right:0;border-bottom:1px solid var(--hair);padding:0!important}
     .acc > summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;

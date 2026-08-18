@@ -125,7 +125,9 @@
     .intro,.packs,.plans,.steps,.filming{grid-template-columns:1fr}
     .filming{gap:12px}
     .intro{gap:20px}
-    .pack,.plan,.steps > div{border-right:0;border-bottom:1px solid var(--hair)}
+    .pack,.plan,.steps > div{border-right:0;border-bottom:1px solid rgba(246,244,238,.2)}
+    .steps > div:not(:first-child){padding-left:0}
+    .steps > div:last-child{border-bottom:0}
     .subhead .hr{display:none}
     .subhead{grid-template-columns:1fr;text-align:center;gap:6px}
     .subhead .mid{white-space:normal;text-align:center;line-height:1.4}
