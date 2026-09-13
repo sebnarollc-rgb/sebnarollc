@@ -51,3 +51,26 @@ Connected to Vercel. Pushes to `main` deploy automatically.
 - [ ] Confirm founding year and service area in the masthead dateline
 - [ ] Add the Instagram handle to the footer
 - [ ] Set the hourly rate referenced on the Instagram pricing page
+
+## Assets
+
+| Path | What it is |
+|---|---|
+| `assets/fonts.css` | The six `@font-face` rules. Every page links this. |
+| `assets/rate-card.css` | Shared by `pricing.html` and `instagram-pricing.html`, which were byte-identical apart from one masthead size. |
+| `fonts/*.woff2` | Self-hosted Anton, Archivo (400/600/700) and Fraunces (variable, 400-600), subset to the characters this site uses. |
+| `vercel.json` | Cache headers. |
+
+Type used to come from Google Fonts. Self-hosting removed two third-party DNS + TLS
+handshakes and a render-blocking stylesheet that had to resolve before any font could
+start downloading. Same faces, 140 KB down to 111 KB.
+
+**If you ever replace a font file, rename it.** `vercel.json` caches `/fonts/*` as
+`immutable` for a year, so browsers will not re-fetch a file at the same path.
+
+Anton ships one weight (400). Heading elements default to bold, so any rule that sets
+`font-family:var(--display)` on an `h1`-`h6` must also set `font-weight:400`, otherwise
+the browser fakes the bold by smearing the glyphs.
+
+`card/index.html` keeps Anton embedded as base64 on purpose: its masthead is sized in
+container units and overflows if Anton ever falls back.

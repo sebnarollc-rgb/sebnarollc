@@ -1,0 +1,46 @@
+/* Sebnaro type, self-hosted.
+   Previously pulled from fonts.googleapis.com, which cost every visitor two extra
+   DNS + TLS handshakes and a render-blocking stylesheet before any font could start
+   downloading. These are the same Google faces, served from our own origin.
+
+   Subset to the characters this site uses plus Basic Latin, Latin-1 Supplement and
+   Latin Extended-A, so accented names typed into the lead form still render.
+   Fraunces is a variable font instanced to the 400-600 weight range, the only
+   weights the site asks for. 140 KB -> 111 KB.
+
+   Arrows and the nav caret were never in Google's latin subsets either; they fall
+   back to a system face exactly as they always have. */
+
+@font-face{
+  font-family:'Anton';
+  font-style:normal; font-weight:400; font-display:swap;
+  src:url(/fonts/anton-400.woff2) format('woff2');
+}
+
+@font-face{
+  font-family:'Archivo';
+  font-style:normal; font-weight:400; font-display:swap;
+  src:url(/fonts/archivo-400.woff2) format('woff2');
+}
+@font-face{
+  font-family:'Archivo';
+  font-style:normal; font-weight:600; font-display:swap;
+  src:url(/fonts/archivo-600.woff2) format('woff2');
+}
+/* 700 is never declared in our CSS; it is what <b> and <strong> resolve to. */
+@font-face{
+  font-family:'Archivo';
+  font-style:normal; font-weight:700; font-display:swap;
+  src:url(/fonts/archivo-700.woff2) format('woff2');
+}
+
+@font-face{
+  font-family:'Fraunces';
+  font-style:normal; font-weight:400 600; font-display:swap;
+  src:url(/fonts/fraunces-var.woff2) format('woff2');
+}
+@font-face{
+  font-family:'Fraunces';
+  font-style:italic; font-weight:400 600; font-display:swap;
+  src:url(/fonts/fraunces-var-italic.woff2) format('woff2');
+}

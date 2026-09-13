@@ -1,0 +1,131 @@
+/* Shared by pricing.html (website packages) and instagram-pricing.html (marketing
+   tiers). These two stylesheets were byte-identical apart from one masthead
+   font-size, and they had already drifted apart once, which is how the 30-day
+   guarantee copy went stale on one page. One file now, so that cannot happen again.
+   The marketing page keeps its own .masthead override inline. */
+
+:root{
+    --paper:#F6F4EE;--ink:#0D0D0B;--dim:rgba(13,13,11,.6);--hair:rgba(13,13,11,.18);--press:#0026FF;
+    --display:'Anton',Impact,'Arial Narrow',sans-serif;
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --sans:'Archivo',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--press);color:#fff}
+  .wrap{max-width:1440px;margin:0 auto;padding:0 clamp(14px,2.4vw,34px)}
+  .rule{height:1px;background:var(--ink)} .rule.thick{height:4px} .rule.hair{background:var(--hair)}
+
+  .dateline{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:9px 0;
+    font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);flex-wrap:wrap}
+  .dateline a{color:var(--press);text-decoration:none}
+  .dateline a:hover{text-decoration:underline}
+
+  .masthead{font-family:var(--display);font-size:clamp(48px,13.4vw,215px);line-height:.8;letter-spacing:-.02em;
+    text-align:center;padding:clamp(10px,1.6vw,22px) 0 clamp(6px,1vw,14px)}
+  .subhead{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:22px;padding:14px 0}
+  .subhead .hr{height:1px;background:var(--hair)}
+  .subhead .mid{font-family:var(--serif);font-style:italic;font-size:clamp(13px,1.15vw,17px);color:var(--dim);text-align:center}
+
+  .intro{padding:clamp(32px,4.4vw,64px) 0 clamp(20px,2.6vw,36px);display:grid;
+    grid-template-columns:1.5fr 1fr;gap:clamp(26px,4vw,64px);align-items:end}
+  .intro h1{font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.6vw,52px);line-height:1.04;
+    letter-spacing:-.03em;max-width:20ch}
+  .intro h1 em{font-style:italic;color:var(--press)}
+  .intro p{font-size:14.5px;line-height:1.62;color:var(--dim);max-width:44ch}
+
+  /* ---- packages ---- */
+  .packs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair);
+    border:1px solid var(--ink);border-top:4px solid var(--ink)}
+  .pack{background:var(--paper);padding:24px 22px 28px;display:flex;flex-direction:column;position:relative}
+  .pack .tier{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--press)}
+  .pack h2{font-family:var(--display);font-weight:400;font-size:clamp(24px,2.4vw,38px);line-height:.94;text-transform:uppercase;
+    letter-spacing:-.015em;margin:12px 0 4px}
+  .pack .kind{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--dim);line-height:1.4}
+  .pack .price{font-family:var(--display);font-size:clamp(40px,4.6vw,74px);line-height:.92;letter-spacing:-.025em;
+    margin:20px 0 2px;display:flex;align-items:baseline;gap:10px}
+  .pack .price span{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--dim)}
+  .pack .best{font-size:13px;line-height:1.5;color:var(--dim);border-top:1px solid var(--hair);
+    border-bottom:1px solid var(--hair);padding:12px 0;margin:16px 0 18px}
+  .pack .best b{color:var(--ink);font-weight:600}
+  .pack h4{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin-bottom:12px}
+  .pack ul{list-style:none;flex:1}
+  .pack li{font-size:13.5px;line-height:1.45;padding:8px 0 8px 20px;border-bottom:1px dotted var(--hair);position:relative}
+  .pack li:last-child{border-bottom:0}
+  .pack li::before{content:'✓';position:absolute;left:0;top:8px;color:var(--press);font-size:11px}
+  .pack li b{font-weight:600;color:var(--ink)}
+  .pack li.plus{font-weight:600}
+  .pack li.plus::before{content:'+'}
+  .pack .go{margin-top:22px;display:inline-flex;align-items:center;justify-content:space-between;gap:10px;
+    border:1px solid var(--ink);padding:13px 16px;text-decoration:none;color:var(--ink);font-size:13px;
+    font-weight:600;letter-spacing:-.01em;transition:.25s}
+  .pack .go:hover{background:var(--ink);color:var(--paper)}
+  .pack.feature{background:#fff}
+  .pack.feature::after{content:'Recommended';position:absolute;top:0;right:0;background:var(--press);color:#fff;
+    font-size:9px;letter-spacing:.18em;text-transform:uppercase;padding:5px 10px}
+
+  /* ---- care plans ---- */
+  .care{padding:clamp(40px,5.4vw,84px) 0 0}
+  .sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:4px solid var(--ink);padding-bottom:10px;flex-wrap:wrap}
+  .sec-head h3{font-family:var(--display);font-weight:400;font-size:clamp(24px,3.4vw,52px);text-transform:uppercase;letter-spacing:-.01em}
+  .sec-head span{margin-left:auto;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+  .care p.note{font-size:14px;line-height:1.6;color:var(--dim);max-width:62ch;margin-top:16px}
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair);
+    border:1px solid var(--hair);margin-top:22px}
+  .plan{background:var(--paper);padding:22px 20px 26px}
+  .plan .n{font-family:var(--display);font-size:clamp(20px,2vw,30px);text-transform:uppercase;letter-spacing:-.01em}
+  .plan .amt{font-family:var(--display);font-size:clamp(30px,3.2vw,50px);line-height:1;color:var(--press);margin:10px 0 4px}
+  .plan .pair{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);
+    border-top:1px solid var(--hair);padding-top:12px;margin-top:12px}
+  .plan p{font-size:13.5px;line-height:1.55;color:var(--dim);margin-top:12px}
+
+  /* ---- how it works ---- */
+  .how{background:var(--ink);color:var(--paper);margin-top:clamp(46px,6vw,92px);padding:clamp(42px,5.6vw,88px) 0}
+  .how h3{font-family:var(--display);font-weight:400;font-size:clamp(28px,4.6vw,72px);line-height:1.12;text-transform:uppercase;letter-spacing:-.02em}
+  .how h3 em{font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none;color:#5C7BFF}
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);margin-top:38px;border-top:1px solid rgba(246,244,238,.3)}
+  .steps > div{padding:22px 18px 26px 0;border-right:1px solid rgba(246,244,238,.2)}
+  .steps > div:not(:first-child){padding-left:18px}
+  .steps > div:last-child{border-right:0}
+  .steps .n{font-family:var(--display);font-size:clamp(30px,3vw,46px);line-height:.85;color:transparent;
+    -webkit-text-stroke:1.1px rgba(246,244,238,.5)}
+  .steps h4{font-size:16px;font-weight:600;margin:14px 0 8px;letter-spacing:-.02em}
+  .steps p{font-size:12.5px;line-height:1.55;color:rgba(246,244,238,.6)}
+
+  /* ---- filming note ---- */
+  .filming{border-top:4px solid var(--ink);margin-top:clamp(30px,4vw,54px);padding-top:20px;
+    display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,58px);align-items:start}
+  .filming .fh{font-family:var(--display);font-size:clamp(18px,2vw,30px);text-transform:uppercase;
+    letter-spacing:-.01em;white-space:nowrap}
+  .filming p{font-size:14px;line-height:1.62;color:var(--dim);max-width:70ch}
+  .filming p + p{margin-top:12px}
+
+  /* ---- close ---- */
+  .close{padding:clamp(44px,6vw,96px) 0;text-align:center}
+  .close h2{font-family:var(--display);font-weight:400;font-size:clamp(32px,6.4vw,104px);line-height:1.08;text-transform:uppercase;
+    letter-spacing:-.025em;max-width:18ch;margin:0 auto}
+  .close h2 em{font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none;color:var(--press)}
+  .close p{font-size:15px;line-height:1.6;color:var(--dim);max-width:52ch;margin:22px auto 0}
+  .btn{display:inline-block;margin-top:28px;background:var(--ink);color:var(--paper);text-decoration:none;
+    padding:16px 30px;font-size:13px;font-weight:600;letter-spacing:.04em;transition:.25s}
+  .btn:hover{background:var(--press)}
+  .colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:16px 0 34px;
+    font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);border-top:1px solid var(--ink)}
+  .colophon a{color:var(--dim);text-decoration:none}
+  .colophon a:hover{color:var(--press)}
+
+  @media (max-width:900px){
+    .intro,.packs,.plans,.steps,.filming{grid-template-columns:1fr}
+    .filming{gap:12px}
+    .intro{gap:20px}
+    .pack,.plan,.steps > div{border-right:0;border-bottom:1px solid rgba(246,244,238,.2)}
+    .steps > div:not(:first-child){padding-left:0}
+    .steps > div:last-child{border-bottom:0}
+    .subhead .hr{display:none}
+    .subhead{grid-template-columns:1fr;text-align:center;gap:6px}
+    .subhead .mid{white-space:normal;text-align:center;line-height:1.4}
+    .sec-head span{margin-left:0}
+    .packs{border-top-width:4px}
+  }
