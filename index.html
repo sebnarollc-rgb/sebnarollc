@@ -251,6 +251,25 @@
   #nav .cta:hover{background:var(--press);color:#fff}
   #navtoggle{display:none}
 
+  /* pricing dropdown: name both rate cards before the click */
+  .navdrop{position:relative}
+  #nav .ndtrig{appearance:none;-webkit-appearance:none;background:none;border:0;cursor:pointer;
+    font-family:var(--sans);color:rgba(246,244,238,.62);font-size:10px;letter-spacing:.18em;
+    text-transform:uppercase;padding:8px 11px;transition:.2s;display:inline-flex;align-items:center;gap:6px}
+  #nav .ndtrig:hover,.navdrop:hover .ndtrig,#nav .ndtrig[aria-expanded="true"]{color:var(--paper)}
+  #nav .ndc{font-size:8px;transition:transform .2s}
+  .navdrop:hover .ndc,#nav .ndtrig[aria-expanded="true"] .ndc{transform:rotate(180deg)}
+  .ndmenu{position:absolute;top:100%;left:0;min-width:252px;background:var(--ink);
+    border:1px solid rgba(246,244,238,.22);padding:6px;opacity:0;visibility:hidden;
+    transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s}
+  .navdrop:hover .ndmenu,.navdrop:focus-within .ndmenu,.ndmenu.open{opacity:1;visibility:visible;transform:translateY(0)}
+  .ndmenu a{display:block;text-decoration:none;padding:10px 12px;transition:background .15s}
+  .ndmenu a:hover{background:rgba(246,244,238,.09)}
+  .ndmenu b{display:block;color:var(--paper);font-family:var(--sans);font-size:10px;font-weight:600;
+    letter-spacing:.16em;text-transform:uppercase}
+  .ndmenu span{display:block;color:rgba(246,244,238,.55);font-family:var(--sans);font-size:11.5px;
+    letter-spacing:.01em;text-transform:none;margin-top:4px}
+
   /* ---------- pricing link band ---------- */
   .pricelink{display:flex;align-items:center;gap:18px;margin-top:clamp(26px,3.4vw,44px);
     border:1px solid var(--ink);border-left:5px solid var(--press);padding:20px 22px;text-decoration:none;
@@ -337,7 +356,7 @@
     #calframe{height:560px}
     .pricelink{flex-wrap:wrap;gap:10px}
     .pricelink .pl-a{margin-left:0}
-    #nav .l{display:none}
+    #nav .l,.navdrop{display:none}
     #nav .inner{height:46px}
     #cover{min-height:0}
     .lead{padding:38px 0 30px;gap:30px}
@@ -374,7 +393,13 @@
     <a class="bm" href="#top">SEBNARO</a>
     <a class="l" href="#websites">Websites</a>
     <a class="l" href="#marketing">Marketing</a>
-    <a class="l" href="pricing.html">Pricing</a>
+    <div class="navdrop">
+      <button class="ndtrig" type="button" aria-haspopup="true" aria-expanded="false">Pricing <span class="ndc" aria-hidden="true">&#9662;</span></button>
+      <div class="ndmenu">
+        <a href="pricing.html"><b>Website packages</b><span>Three builds, from $899</span></a>
+        <a href="instagram-pricing.html"><b>Marketing tiers</b><span>Three tiers, from $750 a month</span></a>
+      </div>
+    </div>
     <a class="cta" href="#contact">Start a project</a>
   </div>
 </nav>
@@ -517,7 +542,7 @@
 <!-- INVERTED PROCESS -->
 <section class="invert">
   <div class="wrap">
-    <h3>Four steps.<br><em>No surprise invoices.</em></h3>
+    <h3>Four steps.<br><em>Call to launch.</em></h3>
     <div class="steps">
       <div><div class="n">01</div><h4>Call</h4><p>Thirty minutes. What you sell, who buys it, and what's leaking.</p><span class="when">Day 0</span></div>
       <div><div class="n">02</div><h4>Scope</h4><p>One page: deliverables, price, dates. You sign the page, not a forty-page agreement.</p><span class="when">Day 1–3</span></div>
@@ -886,6 +911,20 @@
       });
     });
   }
+
+  /* nav pricing dropdown: CSS covers hover/focus, this covers click and dismissal */
+  (function(){
+    var dd=document.querySelector('.navdrop'); if(!dd) return;
+    var trig=dd.querySelector('.ndtrig'), menu=dd.querySelector('.ndmenu');
+    function shut(){ menu.classList.remove('open'); trig.setAttribute('aria-expanded','false'); }
+    trig.addEventListener('click',function(e){
+      e.stopPropagation();
+      var open=menu.classList.toggle('open');
+      trig.setAttribute('aria-expanded', open?'true':'false');
+    });
+    document.addEventListener('click',function(e){ if(!dd.contains(e.target)) shut(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') shut(); });
+  })();
 
   buildMarquee(); render();
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(buildMarquee);
